@@ -1,0 +1,61 @@
+
+#include <winnt.rh>
+#include <winuser.rh>
+#include <commctrl.rh>
+#include <winver.h>
+
+#include "Resources.h"
+#include "Version.h"
+
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+
+// значки
+
+IDI_FRAMEWND ICON "..\Графика\Значки\Значок приложения\SnakePackage.ico"
+
+// манифест для отображения стандартных элементов управления в стиле XP
+
+CREATEPROCESS_MANIFEST_RESOURCE_ID RT_MANIFEST "Singoscope.manifest"
+
+// таблица акселераторов
+
+IDA_ACCELERATORS ACCELERATORS
+BEGIN
+  "O",       IDC_OPENFILE,        VIRTKEY, CONTROL
+END
+
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+
+// версия для файла Singoscope.exe
+
+1 VERSIONINFO
+FILEVERSION FILE_MAJOR_VER, FILE_MINOR_VER, 0, 0
+PRODUCTVERSION PRODUCT_MAJOR_VER, PRODUCT_MINOR_VER, 0, 0
+FILEFLAGSMASK 0x3F
+FILEFLAGS 0
+FILEOS VOS__WINDOWS32
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904E4"
+    BEGIN
+      VALUE "FileVersion",      FILE_VERSION_STR
+      VALUE "FileDescription",  FILE_DESCRIPTION
+      VALUE "InternalName",     INTERNAL_NAME
+      VALUE "OriginalFilename", ORIGINAL_FILENAME
+
+      VALUE "ProductName",      PRODUCT_NAME
+      VALUE "ProductVersion",   PRODUCT_VERSION
+      VALUE "CompanyName",      COMPANY_NAME
+      VALUE "LegalCopyright",   COPYRIGHT_NOTICE
+      VALUE "Comments",         COMMON_COMMENT
+    END
+  END
+
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation",
+      0x0409, 0x04E4 // 1252
+  END
+END
